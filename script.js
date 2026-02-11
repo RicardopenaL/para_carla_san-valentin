@@ -1,7 +1,7 @@
 /* =========================
    CONTRASEÑA
 ========================= */
-const PASSWORD = "carla123"; // cámbiala si quieres
+const PASSWORD = "3012cr"; // cámbiala si quieres
 
 const passwordScreen = document.getElementById("passwordScreen");
 const passwordInput  = document.getElementById("passwordInput");
