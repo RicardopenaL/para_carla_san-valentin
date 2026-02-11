@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Para Carla ❤️</title>
+
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     PANTALLA CONTRASEÑA
+========================= -->
+
+<div id="passwordScreen" class="password-screen">
+
+  <div class="password-box">
+
+    <h2>Solo Carla puede entrar ❤️</h2>
+
+    <input
+      type="password"
+      id="passwordInput"
+      placeholder="Ingresa la contraseña">
+
+    <button id="passwordBtn">
+      Entrar 💖
+    </button>
+
+    <p id="passwordError"></p>
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================
+     CAPA CORAZONES
+========================= -->
+
+<div id="hearts-layer"></div>
+
+
+
+<!-- =========================
+     CARD PRINCIPAL
+========================= -->
+
+<main class="card" id="card">
+
+
+
+  <!-- =========================
+       PANTALLA INICIAL
+  ========================= -->
+
+  <section
+    id="screen-question"
+    class="screen active">
+
+    <h1 class="title">
+
+      Tengo algo para ti
+      <span class="emoji">💖</span>
+
+    </h1>
+
+    <p class="subtitle">
+
+      ¿Quieres ver el mensaje?
+
+    </p>
+
+
+    <div class="btn-row">
+
+      <button
+        id="btnYes"
+        class="btn yes">
+
+        Sí
+        <span class="emoji">💖</span>
+
+      </button>
+
+
+      <button
+        id="btnNo"
+        class="btn no">
+
+        No
+        <span class="emoji">🙈</span>
+
+      </button>
+
+    </div>
+
+
+    <p
+      id="hint"
+      class="hint">
+
+    </p>
+
+
+  </section>
+
+
+
+  <!-- =========================
+       PANTALLA MENSAJE
+  ========================= -->
+
+  <section
+    id="screen-message"
+    class="screen">
+
+    <h2 class="title">
+
+      Carla Gonzales Rovira
+      <span class="emoji">💖</span>
+
+    </h2>
+
+
+
+    <p class="message">
+
+      Carla Gonzales Rovira 💖
+      <br><br>
+
+      Quiero que sepas algo: me haces sonreír incluso en los días difíciles.
+      <br><br>
+
+      Tu forma de ser, tu corazón y tu luz hacen que todo se sienta mejor ✨
+      <br><br>
+
+      Gracias por existir, por estar, por ser tú.
+      <br><br>
+
+      Te admiro, te cuido y te elijo… hoy, mañana y siempre 💖
+
+    </p>
+
+
+
+    <!-- =========================
+         BOTONES DE FOTOS
+    ========================= -->
+
+    <div class="photo-buttons">
+
+      <button
+        class="btn photo"
+        data-photo="img/bebe.jpg"
+        data-caption="Cuando eras bebé… ya eras perfecta 🥹👶">
+
+        Bebé
+        <span class="emoji">👶</span>
+
+      </button>
+
+
+
+      <button
+        class="btn photo"
+        data-photo="img/mama.jpg"
+        data-caption="Con tu mamá… qué foto tan bonita 💗👩‍👧">
+
+        Con tu mamá
+        <span class="emoji">👩‍👧</span>
+
+      </button>
+
+
+
+      <button
+        class="btn photo"
+        data-photo="img/grande.jpg"
+        data-caption="Y ahora… cuánta belleza 😍✨">
+
+        Ahora
+        <span class="emoji">😍</span>
+
+      </button>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         BOTON VOLVER
+    ========================= -->
+
+    <button
+      id="btnAgain"
+      class="btn again">
+
+      Volver
+      <span class="emoji">🔁</span>
+
+    </button>
+
+
+
+  </section>
+
+
+
+</main>
+
+
+
+<!-- =========================
+     MODAL FOTOS
+========================= -->
+
+<div
+  id="photoModal"
+  class="modal"
+  aria-hidden="true">
+
+  <div class="modal-content">
+
+    <button
+      id="closeModal"
+      class="close">
+
+      ✖
+
+    </button>
+
+
+    <img
+      id="modalImg"
+      alt="Foto">
+
+
+    <p id="modalCaption"></p>
+
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================
+     SCRIPT
+========================= -->
+
+<script src="script.js"></script>
+
+
+
+</body>
+
+</html>

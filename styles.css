@@ -1,0 +1,622 @@
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root{
+
+  --rosa:#ff6ec7;
+  --rosa-suave:#ffc1e8;
+
+  --azul:#7ec8ff;
+  --azul-suave:#cfeeff;
+
+  --lila:#b57cff;
+  --lila-suave:#e6ccff;
+
+  --fondo1:#14001f;
+  --fondo2:#1a0033;
+
+  --card:#ffffff10;
+  --border:#ffffff30;
+
+  --text:#ffffff;
+  --text-soft:#ffffffcc;
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html,body{
+  height:100%;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body{
+
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+               "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji", sans-serif;
+
+  color:var(--text);
+
+  overflow:hidden;
+
+  background:
+    radial-gradient(circle at 20% 20%, #ff6ec72c 0%, transparent 42%),
+    radial-gradient(circle at 80% 30%, #7ec8ff2c 0%, transparent 42%),
+    radial-gradient(circle at 50% 80%, #b57cff2c 0%, transparent 45%),
+    linear-gradient(135deg, var(--fondo1), var(--fondo2));
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+}
+
+
+/* =====================================================
+   CAPA CORAZONES
+===================================================== */
+
+#hearts-layer{
+
+  position:fixed;
+
+  inset:0;
+
+  pointer-events:none;
+
+  overflow:hidden;
+
+  z-index:0;
+
+}
+
+
+.heart{
+
+  position:absolute;
+
+  bottom:-40px;
+
+  font-size:22px;
+
+  opacity:.95;
+
+  animation: floatUp linear forwards;
+
+  filter: drop-shadow(0 8px 12px #00000066);
+
+}
+
+
+@keyframes floatUp{
+
+  from{
+    transform: translateY(0) translateX(0) scale(1);
+    opacity:0;
+  }
+
+  10%{
+    opacity:1;
+  }
+
+  to{
+    transform: translateY(-110vh) translateX(var(--drift)) scale(var(--scale));
+    opacity:0;
+  }
+
+}
+
+
+/* =====================================================
+   CARD PRINCIPAL
+===================================================== */
+
+.card{
+
+  position:relative;
+
+  z-index:1;
+
+  width:min(640px,92vw);
+
+  padding:28px;
+
+  border-radius:22px;
+
+  background:linear-gradient(
+    135deg,
+    #ff6ec71c,
+    #7ec8ff1c,
+    #b57cff1c
+  );
+
+  border:1px solid var(--border);
+
+  backdrop-filter:blur(16px);
+
+  text-align:center;
+
+  box-shadow:
+    0 18px 60px #00000066,
+    0 0 22px #ff6ec740;
+
+}
+
+
+/* =====================================================
+   TITULOS
+===================================================== */
+
+.title{
+
+  font-size:30px;
+
+  margin-bottom:10px;
+
+  background:linear-gradient(
+    90deg,
+    var(--rosa),
+    var(--azul),
+    var(--lila)
+  );
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+}
+
+
+.subtitle{
+
+  font-size:18px;
+
+  margin-bottom:18px;
+
+  color:var(--text-soft);
+
+}
+
+
+/* =====================================================
+   MENSAJE
+===================================================== */
+
+.message{
+
+  margin-top:10px;
+
+  padding:18px;
+
+  border-radius:18px;
+
+  background:linear-gradient(
+    135deg,
+    #ff6ec72a,
+    #7ec8ff2a,
+    #b57cff2a
+  );
+
+  border:1px solid var(--border);
+
+  font-size:18px;
+
+  line-height:1.65;
+
+}
+
+
+/* =====================================================
+   FILAS BOTONES
+===================================================== */
+
+.btn-row{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:12px;
+
+  flex-wrap:wrap;
+
+}
+
+
+.photo-buttons{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:10px;
+
+  flex-wrap:wrap;
+
+  margin-top:14px;
+
+}
+
+
+/* =====================================================
+   BOTONES GENERALES
+===================================================== */
+
+.btn{
+
+  border:none;
+
+  border-radius:16px;
+
+  padding:12px 20px;
+
+  font-size:16px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  color:white;
+
+  transition:0.2s;
+
+  min-width:150px;
+
+}
+
+
+.btn:hover{
+
+  transform:scale(1.07);
+
+}
+
+
+.btn:active{
+
+  transform:scale(.97);
+
+}
+
+
+/* =====================================================
+   BOTON SI
+===================================================== */
+
+.btn.yes{
+
+  background:linear-gradient(
+    90deg,
+    var(--rosa),
+    var(--lila)
+  );
+
+  box-shadow:0 12px 30px #ff6ec73a;
+
+}
+
+
+/* =====================================================
+   BOTON NO
+===================================================== */
+
+.btn.no{
+
+  background:linear-gradient(
+    90deg,
+    var(--azul),
+    var(--lila)
+  );
+
+  box-shadow:0 12px 30px #7ec8ff30;
+
+}
+
+
+/* =====================================================
+   BOTON VOLVER (ARREGLADO)
+===================================================== */
+
+.btn.again{
+
+  margin-top:18px;
+
+  background:linear-gradient(
+    90deg,
+    var(--lila),
+    var(--rosa)
+  );
+
+  box-shadow:0 12px 30px #b57cff40;
+
+  width:200px;
+
+  display:inline-block;
+
+}
+
+
+/* =====================================================
+   BOTONES FOTO
+===================================================== */
+
+.btn.photo{
+
+  background:linear-gradient(
+    90deg,
+    var(--azul),
+    var(--rosa)
+  );
+
+  box-shadow:0 10px 24px #00000033;
+
+}
+
+
+/* =====================================================
+   HINT TEXTO
+===================================================== */
+
+.hint{
+
+  margin-top:12px;
+
+  min-height:26px;
+
+  font-size:16px;
+
+  color:var(--rosa-suave);
+
+}
+
+
+/* =====================================================
+   PANTALLAS
+===================================================== */
+
+.screen{
+
+  display:none;
+
+}
+
+
+.screen.active{
+
+  display:block;
+
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal{
+
+  position:fixed;
+
+  inset:0;
+
+  display:none;
+
+  justify-content:center;
+
+  align-items:center;
+
+  background:#000000aa;
+
+  z-index:99999;
+
+}
+
+
+.modal.show{
+
+  display:flex;
+
+}
+
+
+.modal-content{
+
+  background:linear-gradient(
+    135deg,
+    #ffffff18,
+    #ffffff10
+  );
+
+  border-radius:18px;
+
+  padding:16px;
+
+  border:1px solid #ffffff33;
+
+  backdrop-filter:blur(12px);
+
+  width:min(640px,95vw);
+
+  position:relative;
+
+}
+
+
+.modal-content img{
+
+  width:100%;
+
+  border-radius:12px;
+
+}
+
+
+.modal-content p{
+
+  margin-top:10px;
+
+}
+
+
+/* BOTON CERRAR */
+
+.close{
+
+  position:absolute;
+
+  top:10px;
+
+  right:10px;
+
+  border:none;
+
+  border-radius:10px;
+
+  padding:6px 10px;
+
+  background:linear-gradient(
+    90deg,
+    var(--lila),
+    var(--rosa)
+  );
+
+  color:white;
+
+  cursor:pointer;
+
+}
+
+
+/* =====================================================
+   CONTRASEÑA
+===================================================== */
+
+.password-screen{
+
+  position:fixed;
+
+  inset:0;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  background:
+    radial-gradient(circle at 20% 20%, #ff6ec72c 0%, transparent 42%),
+    radial-gradient(circle at 80% 30%, #7ec8ff2c 0%, transparent 42%),
+    radial-gradient(circle at 50% 80%, #b57cff2c 0%, transparent 45%),
+    linear-gradient(135deg, var(--fondo1), var(--fondo2));
+
+  z-index:999999;
+
+}
+
+
+.password-box{
+
+  background:linear-gradient(
+    135deg,
+    #ff6ec720,
+    #7ec8ff20,
+    #b57cff20
+  );
+
+  padding:30px;
+
+  border-radius:20px;
+
+  border:1px solid var(--border);
+
+  backdrop-filter:blur(14px);
+
+  text-align:center;
+
+  width:min(420px,92vw);
+
+}
+
+
+.password-box input{
+
+  width:100%;
+
+  padding:12px;
+
+  border-radius:12px;
+
+  border:none;
+
+  margin-top:10px;
+
+}
+
+
+.password-box button{
+
+  width:100%;
+
+  padding:12px;
+
+  margin-top:12px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:linear-gradient(
+    90deg,
+    var(--rosa),
+    var(--lila)
+  );
+
+  color:white;
+
+  cursor:pointer;
+
+}
+
+
+#passwordError{
+
+  margin-top:10px;
+
+  color:#ff9bbf;
+
+}
+/* =====================================================
+   FIX EMOJIS EN TITULOS (NO ROMPE DEGRADADO)
+===================================================== */
+
+.title .emoji{
+
+  -webkit-text-fill-color: unset !important;
+
+  background: none !important;
+
+  color: unset !important;
+
+  filter: none !important;
+
+  font-family:
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Noto Color Emoji",
+    system-ui,
+    sans-serif;
+
+}
