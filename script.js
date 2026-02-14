@@ -39,6 +39,22 @@ const card = document.getElementById("card");
 const heartsLayer = document.getElementById("hearts-layer");
 
 /* =========================
+   MUSICA (AGREGADO)
+========================= */
+const bgMusic = document.getElementById("bgMusic");
+
+function playMusic(){
+  if(!bgMusic) return;
+
+  bgMusic.volume = 0.6; // ajusta si quieres (0.0 a 1.0)
+
+  bgMusic.play().catch(() => {
+    // Algunos navegadores bloquean si no fue un click,
+    // pero aquí se ejecuta desde el click del botón "Sí", así que normalmente funciona.
+  });
+}
+
+/* =========================
    MODAL FOTOS
 ========================= */
 const photoModal   = document.getElementById("photoModal");
@@ -119,6 +135,7 @@ function shakeCard(){
    LÓGICA SI / NO
 ========================= */
 function handleYes(){
+  playMusic(); // ✅ MUSICA EMPIEZA AL PONER "SÍ"
   if (hint) hint.textContent = "Sabía que ibas a decir que sí 😄❤️";
   setTimeout(showMessageScreen, 350);
 }
@@ -135,6 +152,7 @@ function handleNo(){
     hint.textContent = "🥺 Vamos… intenta otra vez";
   } else {
     hint.textContent = "😌 Ok ok… igual te lo muestro porque te amo ❤️";
+    playMusic(); // ✅ por si llega a la carta diciendo "No"
     setTimeout(showMessageScreen, 850);
   }
 }
